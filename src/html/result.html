@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+      <h1>Информация о модели</h1>
+
+      <h2>Значение функции потерь на каждой итерации для обучающей выборки</h2>
+           <div>{{ score_train }}</div>
+
+      {% if score_val %}
+      <h2>Значение функции потерь на каждой итерации для валидационной выборки</h2>
+          <div>{{ score_val }}</div>
+      {% endif %}
+      <h2> Параметры модели </h2>
+      <div>n_estimators={{n_estimators}}</div>
+      <div>max_depth={{max_depth}}</div>
+      <div>feature={{feature}}</div>
+
+      {{ wtf.quick_form(form) }}
+</div>
+
+{% endblock %}

@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 from scipy.optimize import minimize_scalar
 from sklearn.tree import DecisionTreeRegressor
 import time

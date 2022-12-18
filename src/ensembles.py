@@ -166,9 +166,3 @@ class GradientBoostingMSE:
         for i in range(len(self.obj)):
             res += self.g[i] * self.obj[i].predict(X[:, self.ind[i]])
         return res
-#
-# data = pd.read_csv('kc_house_data.csv')
-# X = data.drop(['price'], axis=1)
-# y = data['price']
-# mod = RandomForestMSE(1)
-# mod.fit(X, y)

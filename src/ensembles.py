@@ -166,4 +166,3 @@ class GradientBoostingMSE:
         for i in range(len(self.obj)):
             res += self.g[i] * self.obj[i].predict(X[:, self.ind[i]])
         return res
-

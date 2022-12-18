@@ -3,13 +3,17 @@
 
 <div class="container">
       {{ wtf.quick_form(form) }}
-       {% if y %}
+       {% if name %}
           <h1>Предсказание модели</h1>
-          {% for i in y %}
-              <div><b>{{ i }}</b></div>
-          {% endfor %}
+          <form method="get" action="{{url_for('download_file', name=name)}}">
+              <button type="submit">Скачать temp.csv</button>
+          </form>
       {% endif %}
+      {{ wtf.quick_form(form_bac) }}
 
+      {%for i in err %}
+      <div> {{i}} </div>
+       {% endfor %}
 </div>
 
 {% endblock %}

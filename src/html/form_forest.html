@@ -4,6 +4,9 @@
 
 <div class="container">
       {{ wtf.quick_form(form) }}
-</div>
 
+       {%for i in err %}
+      <div> {{i}} </div>
+       {% endfor %}
+</div>
 {% endblock %}

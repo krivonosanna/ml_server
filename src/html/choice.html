@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+      {% block title %} Выберете дальнейшие действия{% endblock %}
+      {{ wtf.quick_form(form1) }}
+      {{ wtf.quick_form(form2) }}
+</div>
+
+{% endblock %}

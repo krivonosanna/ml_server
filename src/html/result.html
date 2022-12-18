@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+      <h1>Информация о модели</h1>
+
+      <h2>Значение функции потерь на каждой итерации для обучающей выборки</h2>
+           <form method="get" action="{{url_for('download_file', name=score_train)}}">
+              <button type="submit">Скачать train_pred.csv</button>
+           </form>
+
+      {% if score_val %}
+      <h2>Значение функции потерь на каждой итерации для валидационной выборки</h2>
+          <form method="get" action="{{url_for('download_file', name=score_val)}}">
+              <button type="submit">Скачать val_pred.csv</button>
+          </form>
+      {% endif %}
+      <h2> Параметры модели </h2>
+      <ul>
+          <li> <b>n_estimators</b>={{n_estimators}}</li>
+          <li> <b>max_depth</b>={{max_depth}}</li>
+          <li> <b>feature</b>={{feature}} </li>
+      </ul>
+
+      {{ wtf.quick_form(form) }}
+</div>
+
+{% endblock %}

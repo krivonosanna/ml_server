@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+      {{ wtf.quick_form(form) }}
+
+       {%for i in err %}
+      <div> {{i}} </div>
+       {% endfor %}
+</div>
+{% endblock %}
